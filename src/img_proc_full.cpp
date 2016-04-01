@@ -178,11 +178,6 @@ public:
     cv::erode(colorDilated, dst, element);
   }
 
-  void detectContours(cv::Mat src, std::vector<std::vector<cv::Point> >& contours)
-  {
-    cv::findContours(src.clone(), contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_SIMPLE);
-  }
-
   void drawContours(cv::Mat src, std::vector<std::vector<cv::Point> >& contours, cv::Mat& dst)
   {
     dst = src.clone();
