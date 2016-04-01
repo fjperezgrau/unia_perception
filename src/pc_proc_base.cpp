@@ -54,7 +54,7 @@ public:
 int main(int argc, char** argv)
 {
   ros::init(argc, argv, "pc_proc_base");
-  ros::NodeHandle n;
+  ros::NodeHandle n("~");
   PointCloudProcessor pc(n);
   ros::spin();
   return 0;
