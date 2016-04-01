@@ -1,0 +1,17 @@
+<!-- asus_bag_recorder.launch
+  This file includes the openni driver and the bag player nodes.
+  Author: Francisco J. Perez Grau (fjperezgrau@gmail.com)
+-->
+
+<launch>
+
+  <param name="/use_sim_time" value="true" />
+
+  <include file="$(find openni_launch)/launch/openni.launch" >		# Launches openni driver to generate pointclouds
+	<arg name="load_driver" value="false" />
+  </include>
+
+  <arg name="path" default="$(env HOME)/data/asus_test.bag" />	# Write the path to your bag file
+  <node name="player" type="play" pkg="rosbag" args="--pause --loop --clock $(arg path)" output="screen" />
+
+</launch>
