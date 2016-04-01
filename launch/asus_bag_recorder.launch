@@ -1,0 +1,12 @@
+<!-- asus_bag_recorder.launch
+  This file includes the bag recorder node.
+  Use after launching asus_bag_recorder_openni.launch
+  Author: Francisco J. Perez Grau (fjperezgrau@gmail.com)
+-->
+
+<launch>
+
+  <arg name="path" default="$(find unia_perception)/data/asus_test.bag" />	# Write the desired bag file name
+  <node name="recorder" type="record" pkg="rosbag" args="-O $(arg path) /camera/depth_registered/image_raw /camera/depth_registered/camera_info /camera/rgb/image_raw /camera/rgb/camera_info" output="screen" />
+
+</launch>

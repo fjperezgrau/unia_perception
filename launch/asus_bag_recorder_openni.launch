@@ -1,0 +1,15 @@
+<!-- asus_bag_recorder.launch
+  This file includes the bag recorder node.
+  Use before launching asus_bag_recorder.launch
+  Author: Francisco J. Perez Grau (fjperezgrau@gmail.com)
+-->
+
+<launch>
+
+  <param name="/use_sim_time" value="false" />
+
+  <include file="$(find openni_launch)/launch/openni.launch" >
+    <arg name="depth_registration" value="true" />
+  </include>
+
+</launch>

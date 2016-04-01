@@ -1,0 +1,21 @@
+<!-- pc_proc.launch
+  This file includes the pc_proc_full node and visualization tools.
+  Author: Francisco J. Perez Grau (fjperezgrau@gmail.com)
+-->
+
+<launch>
+
+  <node name="pc_proc" type="pc_proc_full" pkg="unia_perception" output="screen">
+    <param name = "cloud_topic" value = "/camera/depth_registered/points" />
+    <param name = "max_distance" value = "3.0" /> 	# Max distance for PassThrough filter
+    <param name = "voxel_size" value = "0.01" />	# Voxel size for VoxelGrid filter
+    <param name = "normal_neighbors" value = "20" />	# Number of neighbors for NormalEstimation
+    <param name = "plane_threshold" value = "0.02" />	# Distance threshold for planes in SACSegmentation
+    <param name = "cluster_tolerance" value = "0.02" />	# Tolerance for EuclideanClusterExtraction
+    <param name = "sphere_threshold" value = "0.01" />	# Distance threshold for spheres in SACSegmentation
+    <param name = "target_radius" value = "0.085" />	# Radius of the target ball
+  </node>
+
+  <node name="rviz" type="rviz" pkg="rviz" args="--d $(find unia_perception)/launch/pc_proc.rviz" output="screen" />
+
+</launch>
