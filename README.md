@@ -1,6 +1,4 @@
-# unia_perception
-
-[![Build Status](https://travis-ci.org/fjperezgrau/unia_perception.svg?branch=master)](https://travis-ci.org/fjperezgrau/unia_perception)
+# unia_perception [![Build Status](https://travis-ci.org/fjperezgrau/unia_perception.svg?branch=master)](https://travis-ci.org/fjperezgrau/unia_perception)
 
 ROS package (catkin) for practical training on Computer Vision using OpenCV and PCL, within the Master's Programme on Development and Experimentation of Remotely Piloted Aircraft Systems (International University of Andalusia, Spain).
 
